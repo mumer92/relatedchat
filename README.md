@@ -7,7 +7,7 @@
 
 # Installation instructions
 
-## Create new Firebase project
+## Create a new Firebase project
 
 1., Go to the [Firebase console](https://console.firebase.google.com)
 
@@ -43,7 +43,7 @@
 
 2., Click on **_Get started_**
 
-3., Click on the the **_Sign-in method_** in the top navigation bar
+3., Click on the **_Sign-in method_** in the top navigation bar
 
 4., Click on **_Email/Password_** and toggle the first **_Enable_** button
 
@@ -111,7 +111,7 @@ const firebaseConfig = {
 
 3., Select your recently created Firebase project
 
-4., If the your project does not appear in the recent project list, then click on **_SELECT PROJECT_**, navigate to the **_ALL_** tab, and select your project from the list
+4., If your project does not appear in the recent project list, then click on **_SELECT PROJECT_**, navigate to the **_ALL_** tab, and select your project from the list
 
 5., Click on the **_+ CREATE SERVICE ACCOUNT_**
 
@@ -179,9 +179,9 @@ const firebaseConfig = {
 
 ## Final thoughts
 
-You can find the public URL of your Web app in the Firebase Console **_Hosting_** menu. By default Firebase generates two links. Click on one of them to see your live Web app.
+You can find the public URL of your Web app in the Firebase Console **_Hosting_** menu. By default, Firebase generates two links. Click on one of them to see your live Web app.
 
-You may experience some loading time during the first few minutes, because the Firebase infrastructure needs some time to warm up.
+You may experience some loading time during the first few minutes because the Firebase infrastructure needs some time to warm up.
 
 ---
 

@@ -58,7 +58,7 @@ export default function Login() {
             try {
               let emailPayload = email;
               let passwordPayload = password;
-              if (FAKE_EMAIL === true && !email.includes('@') && !password) {
+              if (FAKE_EMAIL && !email.includes('@') && !password) {
                 emailPayload = `${email}@${email}.com`;
                 passwordPayload = `${email}111`;
               }
@@ -74,16 +74,13 @@ export default function Login() {
           }}
         >
           {({ values, handleChange, isSubmitting, handleSubmit }) => (
-            <form
-              className="max-w-md w-full mt-10"
-              noValidate
-              onSubmit={handleSubmit}
-            >
+            <form className="max-w-md w-full mt-10" onSubmit={handleSubmit}>
               <div className="w-full space-y-5">
                 <TextField
                   value={values.email}
                   handleChange={handleChange}
-                  type={FAKE_EMAIL === true ? 'text' : 'email'}
+                  type={FAKE_EMAIL ? 'text' : 'email'}
+                  required
                   label="Email address"
                   name="email"
                   autoComplete="email"
@@ -95,6 +92,7 @@ export default function Login() {
                   type="password"
                   label="Password"
                   name="password"
+                  required={!FAKE_EMAIL}
                   autoComplete="current-password"
                   placeholder="Your password"
                 />

@@ -67,7 +67,6 @@ export default function PasswordReset() {
         >
           {({ values, handleChange, isSubmitting, handleSubmit }) => (
             <form
-              noValidate
               onSubmit={handleSubmit}
               className="max-w-md w-full mt-10 space-y-5"
             >
@@ -77,6 +76,8 @@ export default function PasswordReset() {
                 handleChange={handleChange}
                 value={values.email}
                 autoComplete="email"
+                required
+                type="email"
                 placeholder="name@work-email.com"
               />
               <div className="pt-4">

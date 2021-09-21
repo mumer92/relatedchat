@@ -63,7 +63,7 @@ export default function Signup() {
             try {
               let emailPayload = email;
               let passwordPayload = password;
-              if (FAKE_EMAIL === true && !email.includes('@') && !password) {
+              if (FAKE_EMAIL && !email.includes('@') && !password) {
                 emailPayload = `${email}@${email}.com`;
                 passwordPayload = `${email}111`;
               }
@@ -90,11 +90,7 @@ export default function Signup() {
             handleSubmit,
             setFieldValue,
           }) => (
-            <form
-              className="max-w-md w-full mt-10"
-              noValidate
-              onSubmit={handleSubmit}
-            >
+            <form className="max-w-md w-full mt-10" onSubmit={handleSubmit}>
               <div className="w-full space-y-5">
                 <TextField
                   value={values.name}
@@ -103,15 +99,17 @@ export default function Signup() {
                   }
                   label="Full name"
                   name="name"
+                  required
                   autoComplete="name"
                   placeholder="James Whisler"
                 />
                 <TextField
                   value={values.email}
                   handleChange={handleChange}
-                  type={FAKE_EMAIL === true ? 'text' : 'email'}
+                  type={FAKE_EMAIL ? 'text' : 'email'}
                   label="Email address"
                   name="email"
+                  required
                   autoComplete="email"
                   placeholder="name@work-email.com"
                 />
@@ -121,6 +119,7 @@ export default function Signup() {
                   handleChange={handleChange}
                   label="Password"
                   name="password"
+                  required={!FAKE_EMAIL}
                   autoComplete="new-password"
                   placeholder="Your password"
                 />
